@@ -22,7 +22,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/densotestlink/forgotpassword.js'
+        './test/specs/densotestlink/addprecondition/login.js'
     ],
     // Patterns to exclude.
     exclude: [
