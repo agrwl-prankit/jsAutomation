@@ -60,9 +60,10 @@ describe("",async()=>{
     })
 
     it('move to Home Page and open File Upload page', async()=>{
-        // const goToHomePageLink = await $('.navbar-brand')
-        // await goToHomePageLink.click()
+        const goToHomePageLink = await $('.navbar-brand')
+        await goToHomePageLink.click()
         const fileUploadLink = await $('#file-upload')
+        await fileUploadLink.waitForDisplayed()
         await fileUploadLink.click()
         await browser.switchWindow('File Upload')
         await expect(browser).toHaveUrlContaining('File-Upload')
