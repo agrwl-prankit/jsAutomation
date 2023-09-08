@@ -1,6 +1,4 @@
 describe("Login test cases on web driver university", () => {
-
-
   it("with valid info", async () => {
     await browser.url(
       "http://www.webdriveruniversity.com/Contact-Us/contactus.html"
@@ -20,7 +18,7 @@ describe("Login test cases on web driver university", () => {
     submitButton.click();
     await browser.pause(1000);
     const successMsg = await $('//div[@id="contact_reply"]');
-    console.log("Log of with valid info: " + successMsg.getText());
+    console.log("Log of with valid info: " + (await successMsg.getText()));
   });
 
   it("without email address info", async () => {

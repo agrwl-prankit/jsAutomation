@@ -1,0 +1,8 @@
+npm init = initialise node module
+npm init wdio .  = initialise and configure selenium setup
+npx wdio run ./wdio.conf.js = run file with webdriver.io
+
+npm install allure-commandline --save-dev = add allure configurations
+// Run your tests and generate test result data - allure-results folder.
+allure generate allure-results --clean -o allure-report = generate  folder allure-report
+allure open = open allure report portal
