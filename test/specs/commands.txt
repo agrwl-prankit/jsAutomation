@@ -6,3 +6,17 @@ npm install allure-commandline --save-dev = add allure configurations
 // Run your tests and generate test result data - allure-results folder.
 allure generate allure-results --clean -o allure-report = generate  folder allure-report
 allure open = open allure report portal
+
+npm install -g npm-check-updates
+npx npm-check-updates
+npx npm-check-updates -u
+npm install
+npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/register
+
+
+For error:
+allure : File C:\Users\Unthinkable-Lap\AppData\Roaming\npm\allure.ps1 cannot be loaded because running scripts is disabled on this system.
+
+Open window powershell
+Command 1: Get-ExecutionPolicy -List
+Command 2: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser

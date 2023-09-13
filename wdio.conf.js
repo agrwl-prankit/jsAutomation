@@ -1,4 +1,6 @@
-exports.config = {
+import allure from 'allure-commandline';
+
+export const config = {
   //
   // ====================
   // Runner Configuration
