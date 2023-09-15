@@ -1,4 +1,4 @@
-import allure from 'allure-commandline';
+//import allure from 'allure-commandline';
 
 export const config = {
   //
@@ -23,7 +23,7 @@ export const config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["./test/specs/automationteststore/assignment1.js"],
+  specs: ["./test/specs/automationteststore/createaccount.js"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
