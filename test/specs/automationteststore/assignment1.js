@@ -27,6 +27,7 @@ describe("Assignment 1", async () => {
   });
 
   it("Add Total Moisture Facial Cream in cart", async () => {
+    console.log('Adding Total Moisture Facial Cream')
     const addFacialCream = await $('//a[@data-id="66"]');
     await addFacialCream.waitForDisplayed();
     await addFacialCream.scrollIntoView({ inline: "center" });
@@ -51,6 +52,7 @@ describe("Assignment 1", async () => {
   });
 
   it("Add Creme Precieuse Nuit 50ml in cart", async () => {
+    console.log('Creme Precieuse Nuit 50ml')
     const addPrecieuseNuit = await $('//a[@data-id="93"]');
     await addPrecieuseNuit.waitForDisplayed();
     await addPrecieuseNuit.scrollIntoView({ inline: "center" });
@@ -87,10 +89,7 @@ describe("Assignment 1", async () => {
     );
     totalPrice = await subTotalPrice.getText();
     totalPrice = parseFloat(totalPrice.replace("$", ""));
-    if ((totalPrice = price1 + price2)) {
-      console.log("Price matched: $" + totalPrice);
-    }
-
+    await expect(subTotalPrice).toHaveTextContaining("$"+totalPrice)
     const checkoutBtn = await $("#cart_checkout1");
     await checkoutBtn.click();
   });
@@ -136,9 +135,7 @@ describe("Assignment 1", async () => {
     );
     totalPrice = await subTotalPrice.getText();
     totalPrice = parseFloat(totalPrice.replace("$", ""));
-    if ((totalPrice = price1 + price2)) {
-      console.log("Price matched on checkout confirmation: $" + totalPrice);
-    }
+    await expect(subTotalPrice).toHaveTextContaining("$"+totalPrice)
 
     const confirmOrderBtn = await $("#checkout_btn");
     await confirmOrderBtn.click();
