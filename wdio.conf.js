@@ -1,4 +1,4 @@
-//import allure from 'allure-commandline';
+import allure from 'allure-commandline';
 
 export const config = {
   //
@@ -23,7 +23,7 @@ export const config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["./test/specs/automationteststore/createaccount.js"],
+  specs: ["./test/specs/automationteststore/guestcheckout.js"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -126,13 +126,23 @@ export const config = {
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
   reporters: [
-    "spec",
     [
       "allure",
       {
         outputDir: "allure-results",
         disableWebdriverStepsReporting: false,
         disableWebdriverScreenshotsReporting: false,
+      },
+    ],
+    [
+      "spec",
+      {
+        symbols: {
+          passed: "[PASS]",
+          failed: "[FAIL]",
+        },
+        realtimeReporting: true,
+        addConsoleLogs: true,
       },
     ],
   ],

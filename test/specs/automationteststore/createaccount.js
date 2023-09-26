@@ -208,7 +208,9 @@ describe("Create Account with all test cases", async () => {
 
     await firstNameInput.setValue("Prankit");
     await lastNameInput.setValue("Agarwal");
-    await emailInput.setValue("prankit@yopmail.com");
+    let date = new Date().toJSON().slice(0, 10);
+    let currentDate = `${date}@yopmail.com`;
+    await emailInput.setValue(currentDate);
     await address1Input.setValue("Sector-30");
     await cityInput.setValue("Gurgaon");
     await stateDropdown.selectByAttribute("value", "3522");
