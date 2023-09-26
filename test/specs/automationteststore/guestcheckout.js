@@ -27,11 +27,12 @@ describe("Assignment 1", async () => {
   });
 
   it("Add Total Moisture Facial Cream in cart", async () => {
-    console.log('Adding Total Moisture Facial Cream')
+    console.log("Adding Total Moisture Facial Cream");
     const addFacialCream = await $('//a[@data-id="66"]');
     await addFacialCream.waitForDisplayed();
     await addFacialCream.scrollIntoView({ inline: "center" });
-    await addFacialCream.click();
+    //await addFacialCream.click();
+    await browser.clickSubmitButton(addFacialCream);
   });
 
   it("validate if Total Moisture Facial Cream in cart is added in cart", async () => {
@@ -52,11 +53,12 @@ describe("Assignment 1", async () => {
   });
 
   it("Add Creme Precieuse Nuit 50ml in cart", async () => {
-    console.log('Creme Precieuse Nuit 50ml')
+    console.log("Creme Precieuse Nuit 50ml");
     const addPrecieuseNuit = await $('//a[@data-id="93"]');
     await addPrecieuseNuit.waitForDisplayed();
     await addPrecieuseNuit.scrollIntoView({ inline: "center" });
-    await addPrecieuseNuit.click();
+    //await addPrecieuseNuit.click();
+    await browser.clickSubmitButton(addPrecieuseNuit);
   });
 
   it("validate if Creme Precieuse Nuit is added in the cart", async () => {
@@ -89,16 +91,18 @@ describe("Assignment 1", async () => {
     );
     totalPrice = await subTotalPrice.getText();
     totalPrice = parseFloat(totalPrice.replace("$", ""));
-    await expect(subTotalPrice).toHaveTextContaining("$"+totalPrice)
+    await expect(subTotalPrice).toHaveTextContaining("$" + totalPrice);
     const checkoutBtn = await $("#cart_checkout1");
-    await checkoutBtn.click();
+    //await checkoutBtn.click();
+    await browser.clickSubmitButton(checkoutBtn);
   });
 
   it("guest checkout", async () => {
     const guestCheckoutRadioBtn = await $('input[value="guest"]');
     await guestCheckoutRadioBtn.click();
     const continueBtn = await $('button[title="Continue"]');
-    await continueBtn.click();
+    //await continueBtn.click();
+    await browser.clickSubmitButton(continueBtn);
   });
 
   it("Fill Guest checkout form", async () => {
@@ -135,7 +139,7 @@ describe("Assignment 1", async () => {
     );
     totalPrice = await subTotalPrice.getText();
     totalPrice = parseFloat(totalPrice.replace("$", ""));
-    await expect(subTotalPrice).toHaveTextContaining("$"+totalPrice)
+    await expect(subTotalPrice).toHaveTextContaining("$" + totalPrice);
 
     const confirmOrderBtn = await $("#checkout_btn");
     await confirmOrderBtn.click();

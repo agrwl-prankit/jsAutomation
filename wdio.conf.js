@@ -1,4 +1,5 @@
-import allure from 'allure-commandline';
+import allure from "allure-commandline";
+import command from "./test/Utils/command";
 
 export const config = {
   //
@@ -141,7 +142,7 @@ export const config = {
           passed: "[PASS]",
           failed: "[FAIL]",
         },
-        realtimeReporting: true,
+        //realtimeReporting: true,
         addConsoleLogs: true,
       },
     ],
@@ -213,8 +214,11 @@ export const config = {
    * @param {string} commandName hook command name
    * @param {Array} args arguments that command would receive
    */
-  // beforeCommand: function (commandName, args) {
-  // },
+  beforeCommand: function (commandName, args) {
+    Object.keys(command).forEach((key) => {
+      browser.addCommand(key, command[key]);
+    });
+  },
   /**
    * Hook that gets executed before the suite starts
    * @param {object} suite suite details
