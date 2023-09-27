@@ -24,7 +24,7 @@ export const config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["./test/specs/webdriveruniversity/contactus.js"],
+  specs: ["./test/specs/automationteststore/createAccountPOM.js"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
